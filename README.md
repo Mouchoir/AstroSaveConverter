@@ -133,6 +133,15 @@ To build the project documentation locally run:
 sphinx-build -b html docs/ build/html
 ```
 
+## Graphical interface
+
+AstroSaveConverter ships with a simple graphical interface built with the
+standard ``tkinter`` toolkit. Launch it from the repository root with:
+
+```bash
+python -m gui.app
+```
+
 ## Assets
 
 Icons used by the graphical interface live in the `assets/` directory. The

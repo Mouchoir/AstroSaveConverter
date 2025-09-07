@@ -1,4 +1,3 @@
 hexdump==3.3
 PyInstaller==3.6
 winpath==202002.2
-PySimpleGUI>=5.0.8,<5.1
