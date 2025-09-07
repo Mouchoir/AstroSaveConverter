@@ -133,6 +133,14 @@ To build the project documentation locally run:
 sphinx-build -b html docs/ build/html
 ```
 
+## Assets
+
+Icons used by the graphical interface live in the `assets/` directory. The
+main window displays `astroconverterlogo.ico` as its icon. Each step of the
+wizard shows a pictogram: `convert.ppm` for choosing the conversion direction,
+`folder.ppm` for selecting the save folder and `done.ppm` once the conversion
+is finished.
+
 # Special thanks
 
 We (Tignus and EmptyProfile) would like to thanks everyone who helped us in the process of developping our tool:
