@@ -30,6 +30,11 @@ def main():
     sg.set_options(font=("Segoe UI", 12), button_color=("white", "#0078D7"), border_width=0)
 
     astro_path = os.getcwd()
+    assets_path = os.path.join(astro_path, "assets")
+    icon_path = os.path.join(assets_path, "astroconverterlogo.ico")
+    convert_img = os.path.join(assets_path, "convert.ppm")
+    folder_img = os.path.join(assets_path, "folder.ppm")
+    done_img = os.path.join(assets_path, "done.ppm")
     logs_path = os.path.join(astro_path, "logs")
     backup_path = os.path.join(astro_path, "backups")
     Logger.setup_logging(astro_path)
@@ -56,6 +61,7 @@ def main():
 
     # Step 1: choose conversion type
     step1_layout = [
+        [sg.Image(filename=convert_img)],
         [sg.Text("", key="-T1-")],
         [
             sg.Radio("", "MODE", key="-STEAM2WIN-"),
@@ -66,6 +72,7 @@ def main():
 
     # Step 2: choose folder
     step2_layout = [
+        [sg.Image(filename=folder_img)],
         [sg.Text("", key="-T2-")],
         [sg.Input(key="-PATH-"), sg.FolderBrowse("", key="-BROWSE-")],
         [
@@ -76,6 +83,7 @@ def main():
 
     # Step 3: done
     step3_layout = [
+        [sg.Image(filename=done_img)],
         [sg.Text("", key="-T3-")],
         [
             sg.Button("", key="-BACK3-"),
@@ -99,7 +107,7 @@ def main():
         ],
     ]
 
-    window = sg.Window("AstroSaveConverter", layout, finalize=True)
+    window = sg.Window("AstroSaveConverter", layout, finalize=True, icon=icon_path)
 
     current_step = 1
 
